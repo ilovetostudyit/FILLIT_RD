@@ -6,27 +6,11 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 15:41:03 by ehaggon           #+#    #+#             */
-/*   Updated: 2019/02/21 19:36:11 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/02/22 15:29:24 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
-
-int		validTetriminos1(char *str)
-{
-	int		i;
-
-	i = 18;
-	while (str[i] != '\0')
-		{
-			if (str[i + 1] == '\n' && str[i + 1] != '\0')
-				i = i + 2;
-			else
-				return (-1);
-			i = i + 19;
-		}
-	return (1);
-}
 
 int validTetriminos2(char *str)
 {
@@ -73,7 +57,7 @@ int checklinks(char *str, int cnt)
 	int links;
 
 	links = 0;
-	if ((cnt % 20) > 3)
+	if ((cnt % 21) > 3)
 		if ((str[cnt-5]) &&  ((str[cnt-5]) == '#'))
 			links++;
 	if ((str[cnt-1]) &&  ((str[cnt-1]) == '#'))
@@ -82,8 +66,8 @@ int checklinks(char *str, int cnt)
 	if ((str[cnt+1]) &&  ((str[cnt+1]) == '#'))
 		links++;
 
-	if ((cnt % 20) < 15)
-		if ((str[cnt+5]) &&  ((str[cnt+5]) == '#'))
+	if ((cnt % 21) < 15)
+		if ((str[cnt+5]) && ((str[cnt+5]) == '#'))
 			links++;
 	return(links);
 }

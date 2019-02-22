@@ -6,7 +6,7 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 17:48:34 by ehaggon           #+#    #+#             */
-/*   Updated: 2019/02/21 19:28:01 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/02/22 15:14:33 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int        cut_figure(char *str)
 	char *order;
 
     end = 0;
-	if (validTetriminos1(str) != 1 || validTetriminos2(str) != 1 || validTetriminos4(str) != 1 || validTetriminos5(str) != 1)
+	if (validTetriminos2(str) != 1|| validTetriminos4(str) != 1 || validTetriminos5(str) != 1)
 		return(0);
 	i = sqrt_hash(number_of_hash(str));
 	number_of_figure = number_of_hash(str) / 4;
