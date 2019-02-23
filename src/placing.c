@@ -6,13 +6,13 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 17:37:11 by ehaggon           #+#    #+#             */
-/*   Updated: 2019/02/21 18:11:27 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/02/23 14:31:04 by ehaggon          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
-int placing_figure(char *str, char *map, char a, int start, int size)
+int	placing_figure(char *str, char *map, char a, int start, int size)
 {
 	int mapcntr;
 	int hashcntr;
@@ -30,17 +30,12 @@ int placing_figure(char *str, char *map, char a, int start, int size)
 		{
 			strcntr = countbefore(str, mapcntr);
 			if (map[start + strcntr - countbf] == '.')
-				{
-					map[start + strcntr - countbf] = a;
-					hashcntr++;
-					if (hashcntr == 4)
-						return(1);
-				}
-			else
 			{
-				cleaning_figure(map, a);
-				return(0);
+				map[start + strcntr - countbf] = a;
+				hashcntr++;
 			}
+			else
+				return(0);
 		}
 		if (str[mapcntr] == '\n')
 			start = start + size + 1;
@@ -49,7 +44,7 @@ int placing_figure(char *str, char *map, char a, int start, int size)
 	return(1);
 }
 
-int find_answer(char *str, char *map, char *order, int size, int index)
+int	find_answer(char *str, char *map, char *order, int size, int index)
 {
 	int start;
 	char *copy_map;
@@ -76,7 +71,7 @@ int find_answer(char *str, char *map, char *order, int size, int index)
 	return(0);
 }
 
-int order_size(char *order)
+int	order_size(char *order)
 {
 	int i;
 
@@ -86,7 +81,7 @@ int order_size(char *order)
 	return(i);
 }
 
-int firstelement(char *str, char a)
+int	firstelement(char *str, char a)
 {
 	int cntr;
 
@@ -100,7 +95,7 @@ int firstelement(char *str, char a)
 	return(0);
 }
 
-int countbefore(char *str, int cntr)
+int	countbefore(char *str, int cntr)
 {
 	int cntbef;
 
@@ -113,7 +108,7 @@ int countbefore(char *str, int cntr)
 	return(4 - cntbef);
 }
 
-int cleaning_figure(char *str, char a)
+int	cleaning_figure(char *str, char a)
 {
 	int i;
 
