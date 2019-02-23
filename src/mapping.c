@@ -6,20 +6,19 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 16:08:49 by ehaggon           #+#    #+#             */
-/*   Updated: 2019/02/21 18:11:23 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/02/23 14:45:44 by jmartyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
-int number_of_hash(char *str)
+int		number_of_hash(char *str)
 {
 	int index;
 	int j;
 
 	index = 0;
 	j = 0;
-
 	while (str[index] != '\0')
 	{
 		if (str[index] == '#')
@@ -29,7 +28,7 @@ int number_of_hash(char *str)
 	return (j);
 }
 
-int sqrt_hash(int hash)
+int		sqrt_hash(int hash)
 {
 	int a;
 
@@ -38,10 +37,10 @@ int sqrt_hash(int hash)
 	{
 		a++;
 	}
-	return(a);
+	return (a);
 }
 
-char *coloring(char *str)
+char	*coloring(char *str)
 {
 	int index;
 	int j;
@@ -70,18 +69,18 @@ char *coloring(char *str)
 	return (str);
 }
 
-char *createmapp(int a)
+char	*createmapp(int a)
 {
-	char *map;
-	int i;
-	int cnt;
+	char	*map;
+	int		i;
+	int		cnt;
 
 	i = 0;
 	cnt = 0;
 	map = (char *)malloc(sizeof(char) * ((a + 1) * (a) + 1));
 	while (i < ((a + 1) * a))
 	{
-		while(i < ((a + 1) * a) && cnt < a)
+		while (i < ((a + 1) * a) && cnt < a)
 		{
 			map[i] = '.';
 			cnt++;
@@ -92,19 +91,19 @@ char *createmapp(int a)
 		i++;
 	}
 	map[i] = '\0';
-	return(map);
+	return (map);
 }
 
-char *createorder(int a)
+char	*createorder(int a)
 {
-	char *str;
-	int i;
-	char chr;
+	char	*str;
+	int		i;
+	char	chr;
 
 	i = 0;
 	chr = 'A';
 	if ((str = (char *)malloc(sizeof(char) * (a + 1))) == 0)
-		return(NULL);
+		return (NULL);
 	while (i < (a))
 	{
 		str[i] = chr;
@@ -112,7 +111,5 @@ char *createorder(int a)
 		chr++;
 	}
 	str[i] = '\0';
-	return(str);
+	return (str);
 }
-
-

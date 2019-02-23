@@ -6,13 +6,13 @@
 /*   By: ehaggon <ehaggon@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/15 15:41:03 by ehaggon           #+#    #+#             */
-/*   Updated: 2019/02/22 15:29:24 by ehaggon          ###   ########.fr       */
+/*   Updated: 2019/02/23 14:41:56 by jmartyn-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fillit.h"
 
-int validTetriminos2(char *str)
+int		validtetriminos2(char *str)
 {
 	int		i;
 	int		j;
